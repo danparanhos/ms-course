@@ -2,11 +2,12 @@ package com.paranhos.hrpayroll.model;
 
 import java.io.Serializable;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Getter @Setter @NoArgsConstructor
+@Getter @Setter @NoArgsConstructor @AllArgsConstructor
 public class Payment implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -14,13 +15,6 @@ public class Payment implements Serializable {
 	private String name;
 	private Double dailyIncome;
 	private Integer days;
-	
-	public Payment(String name, Double dailyIncome, Integer days) {
-		super();
-		this.name = name;
-		this.dailyIncome = dailyIncome;
-		this.days = days;
-	}
 
 	public double getTotal() {
 		return days * dailyIncome;
