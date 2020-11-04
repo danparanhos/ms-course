@@ -1,5 +1,7 @@
 package com.paranhos.hrworker.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -15,7 +17,9 @@ import lombok.Setter;
 @Entity
 @Table(name = "tb_worker")
 @Getter @Setter @NoArgsConstructor @EqualsAndHashCode
-public class Worker {
+public class Worker implements Serializable {
+
+	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
